@@ -1,0 +1,24 @@
+<html>
+
+<script type="text/javascript">
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+function on (){
+	httpGet("/led/on")
+}
+function off (){
+	httpGet("/led/off")
+}
+</script>
+
+<body>
+<input style="font-size: 128px; color: red;" type="button" value="On" onclick="javascript:on()"/>
+<input style="font-size: 128px; color: green;" type="button" value="Off" onclick="javascript:off()"/>
+</body>
+</html>
